@@ -23,6 +23,15 @@
       ],
       "depNameTemplate": "quay.io/prometheus/prometheus",
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^\\.github/workflows/.+\\.yaml$"],
+      "matchStrings": [
+        "uses: azure/setup-helm@v4\\s+with:\\s+version: '(?<currentValue>.*)'"
+      ],
+      "depNameTemplate": "helm/helm",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
